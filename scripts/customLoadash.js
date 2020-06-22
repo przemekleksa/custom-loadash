@@ -27,36 +27,9 @@ function chunk (array, chunkSize = 1) {
 }
 
 
-
-const chunks = (array, chunkSize = 1) => {
-	let chunkArr = []
-	let tmpArr = []
-	for (let i = 0; i <= array.length; i++) {
-
-		if (i === 0) {
-			tmpArr[tmpArr.length] = array[i]
-		}
-
-		if (i % chunkSize !== 0 && array[i] !== undefined) {
-			tmpArr[tmpArr.length] = array[i]
-		}
-
-		if (i % chunkSize === 0 && i !== 0 && array[i] !== undefined) {
-			chunkArr[chunkArr.length] = tmpArr
-			tmpArr = []
-			tmpArr[tmpArr.length] = array[i]
-		}
-
-		if (i === array.length) {
-			chunkArr[chunkArr.length] = tmpArr
-		}
-	}
-	return chunkArr
-}
-
-chunks(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'], 3) // 8 / 9
-chunks(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'], 3) // 9 / 10 / 7
-chunks(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'], 7) // 
+chunk(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'], 3) // 8 / 9
+chunk(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'], 3) // 9 / 10 / 7
+chunk(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'], 7) // 
 
 const compact = (array) => {
 	let newArray = []
